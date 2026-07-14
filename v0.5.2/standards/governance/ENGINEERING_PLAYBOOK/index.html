@@ -1,0 +1,4368 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open standards for knowledge-first, model-driven maritime systems engineering — the MODS documentation stack, governance and reference models, published from the omsp-bootstrap repository.">
+      
+      
+      
+        <link rel="canonical" href="https://omsp-foundation.github.io/omsp-website/v0.5.2/standards/governance/ENGINEERING_PLAYBOOK/">
+      
+      
+        <link rel="prev" href="../ENGINEERING_COUNCIL/">
+      
+      
+        <link rel="next" href="../GOVERNANCE_MODEL/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>OMSP Engineering Playbook - OMSP — Open Maritime Systems Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#omsp-engineering-playbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OMSP — Open Maritime Systems Platform" class="md-header__button md-logo" aria-label="OMSP — Open Maritime Systems Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0 2 2.83V9H8v2h3v8.92c-.74-.13-1.5-.34-2.21-.65-.74-.32-1.39-.71-1.97-1.18s-1.04-.98-1.38-1.54L7 15l-4-3v3c0 .97.27 1.88.82 2.72A8.2 8.2 0 0 0 6 19.95c.87.64 1.84 1.14 2.88 1.5 1.05.36 2.09.55 3.12.55s2.07-.2 3.12-.56c1.04-.36 2.01-.86 2.88-1.49.92-.64 1.63-1.38 2.18-2.23.55-.84.82-1.75.82-2.72v-3l-4 3 1.56 1.55c-.34.56-.8 1.07-1.38 1.54s-1.23.86-1.97 1.18c-.71.31-1.47.52-2.21.65V11h3V9h-3V7.82A3 3 0 0 0 15 5a3 3 0 0 0-3-3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OMSP — Open Maritime Systems Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OMSP Engineering Playbook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OMSP-Foundation/omsp-bootstrap" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OMSP-Foundation/omsp-bootstrap
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Maritime Systems Platform
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../adopt/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Adopting OMSP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contribute/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../architecture/ARCHITECTURE_INDEX/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Standards
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OMSP — Open Maritime Systems Platform" class="md-nav__button md-logo" aria-label="OMSP — Open Maritime Systems Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0 2 2.83V9H8v2h3v8.92c-.74-.13-1.5-.34-2.21-.65-.74-.32-1.39-.71-1.97-1.18s-1.04-.98-1.38-1.54L7 15l-4-3v3c0 .97.27 1.88.82 2.72A8.2 8.2 0 0 0 6 19.95c.87.64 1.84 1.14 2.88 1.5 1.05.36 2.09.55 3.12.55s2.07-.2 3.12-.56c1.04-.36 2.01-.86 2.88-1.49.92-.64 1.63-1.38 2.18-2.23.55-.84.82-1.75.82-2.72v-3l-4 3 1.56 1.55c-.34.56-.8 1.07-1.38 1.54s-1.23.86-1.97 1.18c-.71.31-1.47.52-2.21.65V11h3V9h-3V7.82A3 3 0 0 0 15 5a3 3 0 0 0-3-3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"/></svg>
+
+    </a>
+    OMSP — Open Maritime Systems Platform
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OMSP-Foundation/omsp-bootstrap" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OMSP-Foundation/omsp-bootstrap
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Maritime Systems Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adopt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adopting OMSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/ARCHITECTURE_INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Architecture Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/PLATFORM_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Platform Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/PLATFORM_CONTEXT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Platform Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/PUBLICATION_WORKFLOW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Publication Engine Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Canon
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Canon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/CANON_INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Canon Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/ENGINEERING_METHODOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/MISSION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Mission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/ONTOLOGY_OVERVIEW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Ontology Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/PHILOSOPHY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/PRINCIPLES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/TERMINOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Terminology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/VISION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADR-0001-REPOSITORY-TOPOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0001: Repository Topology for the MODS Product Stack — Monorepo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADR-0002-AUTOMATED-RELEASE-PIPELINE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0002: Automated Release Pipeline with Standing Human Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_GOVERNANCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONSTITUTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Constitution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DECISION_AND_REVIEW_POLICY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Decision and Review Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ENGINEERING_ARTIFACT_STANDARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Artifact Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ENGINEERING_COUNCIL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Council Charter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Playbook
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-engineering-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Engineering Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-core-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Core Terms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Core Terms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-work-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Work Package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Issue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Sprint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Baseline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Release
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-work-package-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Work Package Lifecycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Work Package Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Backlog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-issue-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Issue Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-branch-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Branch Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-commit-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Commit Discipline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-pull-request-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 Pull Request Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-self-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 Self-Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8 Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.9 Merge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#510-closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.10 Closure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-branch-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Branch Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Branch Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 main
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-develop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 develop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-feature-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Feature Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-release-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Release Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-hotfix-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Hotfix Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-pull-request-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Pull Request Policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Pull Request Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-required-pr-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Required PR Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-draft-prs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Draft PRs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-ready-for-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Ready for Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-review-expectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Review Expectations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-merge-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Merge Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-merge-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Merge Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77-post-merge-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7 Post-Merge Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-definition-of-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Definition of Done
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-sprint-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Sprint Lifecycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Sprint Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-sprint-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Sprint Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-sprint-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Sprint Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-sprint-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Sprint Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-sprint-closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Sprint Closure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-baseline-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Baseline Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Baseline Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-baseline-preconditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Baseline Preconditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-baseline-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Baseline Naming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-baseline-authority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Baseline Authority
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-release-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Release Governance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-labels-and-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Labels and Milestones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-traceability-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Traceability Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-documentation-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Documentation Governance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-ai-assisted-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. AI Assisted Development
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Exceptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GOVERNANCE_MODEL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Governance Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../METADATA_AND_TRACEABILITY_STANDARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Metadata and Traceability Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROGRAM_CHARTER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Program Charter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Knowledge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/AI_READABLE_ARTIFACT_PROCESSING_CONTRACT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP AI-Readable Artifact Processing Contract
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/ARTIFACT_REGISTRY_AND_KNOWLEDGE_INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Artifact Registry and Knowledge Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/KNOWLEDGE_GRAPH_CONCEPTUAL_MODEL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Knowledge Graph Conceptual Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/KNOWLEDGE_PLATFORM_VALIDATION_SCENARIOS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Knowledge Platform Validation Scenarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/KNOWLEDGE_PUBLICATION_PACKAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Knowledge Publication Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/SEMANTIC_RELATIONSHIP_CATALOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Semantic Relationship Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/SPRINT_3_BASELINE_RELEASE_READINESS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint-3 Baseline and Release Readiness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ontology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ontology/OMSP_ONTOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Formal Ontology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0069-ENGINEERING_METHODOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0069 — Engineering Methodology Canonical Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0070-AUDIT-DISPOSITION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0070 — Audit Reconciliation Disposition Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0074-GOLDEN-PATH-DEFINITION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0074 — Hanse 460 Golden Path Product Definition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0075-DOMAIN-BACKLOG-REBASELINE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0075 — Domain Roadmap &amp; Backlog Re-baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0076-V051-BASELINE-READINESS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0076 — v0.5.1 Clean Baseline and Release Readiness Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/ADR_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Decision Record (ADR) Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/REQUIREMENT_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirement Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/RISK_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/VALIDATION_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Record Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/WORK_PACKAGE_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Package Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Validation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/BASELINE_READINESS_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Baseline Readiness Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/GITHUB_QUALITY_GATES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP GitHub Quality Gates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/PUBLICATION_READINESS_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication Readiness Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/QUALITY_GATES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Quality Gates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/RELEASE_READINESS_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Release Readiness Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/REPOSITORY_STRUCTURE_VALIDATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Repository Structure Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/VALIDATION_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Validation Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/VALIDATION_FRAMEWORK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Validation Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/VERIFICATION_FRAMEWORK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Verification Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8_10" id="__nav_4_8_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/examples/PR-55_VALIDATION_EVIDENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Validation Evidence for PR #55
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-engineering-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Engineering Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-core-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Core Terms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Core Terms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-work-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Work Package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Issue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Sprint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Baseline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Release
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-work-package-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Work Package Lifecycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Work Package Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Backlog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-issue-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Issue Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-branch-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Branch Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-commit-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Commit Discipline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-pull-request-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 Pull Request Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-self-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 Self-Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8 Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.9 Merge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#510-closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.10 Closure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-branch-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Branch Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Branch Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 main
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-develop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 develop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-feature-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Feature Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-release-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Release Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-hotfix-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Hotfix Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-pull-request-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Pull Request Policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Pull Request Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-required-pr-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Required PR Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-draft-prs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Draft PRs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-ready-for-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Ready for Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-review-expectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Review Expectations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-merge-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Merge Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-merge-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Merge Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77-post-merge-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7 Post-Merge Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-definition-of-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Definition of Done
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-sprint-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Sprint Lifecycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Sprint Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-sprint-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Sprint Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-sprint-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Sprint Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-sprint-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Sprint Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-sprint-closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Sprint Closure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-baseline-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Baseline Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Baseline Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-baseline-preconditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Baseline Preconditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-baseline-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Baseline Naming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-baseline-authority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Baseline Authority
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-release-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Release Governance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-labels-and-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Labels and Milestones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-traceability-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Traceability Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-documentation-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Documentation Governance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-ai-assisted-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. AI Assisted Development
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Exceptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="omsp-engineering-playbook">OMSP Engineering Playbook<a class="headerlink" href="#omsp-engineering-playbook" title="Permanent link">&para;</a></h1>
+<h2 id="1-purpose">1. Purpose<a class="headerlink" href="#1-purpose" title="Permanent link">&para;</a></h2>
+<p>This playbook defines the official engineering lifecycle for OMSP Foundation repositories. It governs how work is planned, implemented, reviewed, merged, released, and baselined from Sprint-1 onward.</p>
+<p>The playbook is intended to make engineering work:</p>
+<ul>
+<li>traceable from idea to baseline;</li>
+<li>reviewable before integration;</li>
+<li>consistent across repositories;</li>
+<li>compatible with AI-assisted development;</li>
+<li>safe for long-lived governance, release, and architecture artifacts.</li>
+</ul>
+<h2 id="2-scope">2. Scope<a class="headerlink" href="#2-scope" title="Permanent link">&para;</a></h2>
+<p>This playbook applies to all OMSP Foundation repositories unless a repository-specific governance document explicitly extends it.</p>
+<p>It covers:</p>
+<ul>
+<li>Work Package lifecycle;</li>
+<li>issue and sprint governance;</li>
+<li>branch and commit rules;</li>
+<li>pull request review and merge rules;</li>
+<li>baseline and release governance;</li>
+<li>documentation and traceability requirements;</li>
+<li>AI-assisted engineering boundaries.</li>
+</ul>
+<h2 id="3-engineering-principles">3. Engineering Principles<a class="headerlink" href="#3-engineering-principles" title="Permanent link">&para;</a></h2>
+<p>OMSP engineering work follows these principles:</p>
+<ul>
+<li><strong>Knowledge First</strong>: important decisions must be documented before they become implicit practice.</li>
+<li><strong>Model First</strong>: architecture, lifecycle, and domain models guide implementation.</li>
+<li><strong>Artifact First</strong>: durable artifacts are preferred over transient conversation or memory.</li>
+<li><strong>Evidence Driven</strong>: changes must be supported by commits, PRs, reviews, checks, and links.</li>
+<li><strong>Review First</strong>: work is not considered complete until it has passed the required review path.</li>
+<li><strong>Automation by Default</strong>: repeatable validation should be automated where practical.</li>
+<li><strong>Traceability Always</strong>: every meaningful change must be traceable to a Work Package, issue, PR, or baseline.</li>
+</ul>
+<h2 id="4-core-terms">4. Core Terms<a class="headerlink" href="#4-core-terms" title="Permanent link">&para;</a></h2>
+<h3 id="41-work-package">4.1 Work Package<a class="headerlink" href="#41-work-package" title="Permanent link">&para;</a></h3>
+<p>A Work Package is a bounded unit of engineering work with a clear objective, deliverables, acceptance criteria, branch, and completion path.</p>
+<p>A Work Package may produce code, documentation, governance artifacts, architecture artifacts, tests, CI changes, or release assets.</p>
+<h3 id="42-issue">4.2 Issue<a class="headerlink" href="#42-issue" title="Permanent link">&para;</a></h3>
+<p>An issue is the authoritative planning and tracking record for a Work Package. It must describe the objective, deliverables, acceptance criteria, branch, target branch, and relevant labels.</p>
+<h3 id="43-sprint">4.3 Sprint<a class="headerlink" href="#43-sprint" title="Permanent link">&para;</a></h3>
+<p>A sprint is a time-bounded execution window containing a selected backlog of Work Packages. A sprint must have a goal, scope, completion criteria, and release or baseline target.</p>
+<h3 id="44-baseline">4.4 Baseline<a class="headerlink" href="#44-baseline" title="Permanent link">&para;</a></h3>
+<p>A baseline is an approved snapshot of repository state and governance artifacts. Baselines are created only after required Work Packages are merged and reviewed.</p>
+<h3 id="45-release">4.5 Release<a class="headerlink" href="#45-release" title="Permanent link">&para;</a></h3>
+<p>A release is a packaged and communicated version of the system or repository. Releases may be created from baselines and must be traceable to the merged work that produced them.</p>
+<h2 id="5-work-package-lifecycle">5. Work Package Lifecycle<a class="headerlink" href="#5-work-package-lifecycle" title="Permanent link">&para;</a></h2>
+<p>Every Work Package follows this lifecycle unless explicitly waived by the Engineering Council.</p>
+<div class="highlight"><pre><span></span><code>Backlog
+  ↓
+Issue
+  ↓
+Feature Branch
+  ↓
+Implementation
+  ↓
+Focused Commits
+  ↓
+Draft Pull Request
+  ↓
+Self-Check
+  ↓
+Architecture / Governance Review
+  ↓
+Ready for Review → issue moves to Testing
+  ↓
+Testing Gate (omsp-tester) — fail returns to Implementation
+  ↓
+CTO Gate (omsp-cto) — TDD-compliance review
+  ↓
+Auto-Merge → develop
+  ↓
+Issue Closed
+  ↓
+Baseline / Release Update when applicable
+</code></pre></div>
+<h3 id="51-backlog">5.1 Backlog<a class="headerlink" href="#51-backlog" title="Permanent link">&para;</a></h3>
+<p>Backlog items may begin as ideas, risks, missing artifacts, or improvement requests. Before work starts, the item must be promoted into an issue with enough detail to guide execution.</p>
+<h3 id="52-issue-creation">5.2 Issue Creation<a class="headerlink" href="#52-issue-creation" title="Permanent link">&para;</a></h3>
+<p>Each Work Package issue must include:</p>
+<ul>
+<li>objective;</li>
+<li>deliverables;</li>
+<li>acceptance criteria;</li>
+<li>source or motivation;</li>
+<li>branch name;</li>
+<li>target branch;</li>
+<li>labels;</li>
+<li>milestone when applicable.</li>
+</ul>
+<h3 id="53-branch-creation">5.3 Branch Creation<a class="headerlink" href="#53-branch-creation" title="Permanent link">&para;</a></h3>
+<p>A feature branch must be created from the current target integration branch, normally <code>develop</code>.</p>
+<p>Branch names must follow:</p>
+<div class="highlight"><pre><span></span><code>feature/wp-xxxx-short-name
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>feature/wp-0012-engineering-playbook-v1
+</code></pre></div>
+<h3 id="54-implementation">5.4 Implementation<a class="headerlink" href="#54-implementation" title="Permanent link">&para;</a></h3>
+<p>Implementation must stay within the Work Package scope. If material new scope is discovered, create or update an issue rather than silently expanding the branch.</p>
+<h3 id="55-commit-discipline">5.5 Commit Discipline<a class="headerlink" href="#55-commit-discipline" title="Permanent link">&para;</a></h3>
+<p>Commits should be focused and reviewable. A Work Package should normally use a small number of meaningful commits rather than many noisy commits.</p>
+<p>Commit messages must follow Conventional Commits.</p>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code>docs(governance): promote engineering playbook to v1.0
+ci(validation): add markdown validation workflow
+chore(release): prepare v0.1.0-bootstrap
+</code></pre></div>
+<h3 id="56-pull-request-creation">5.6 Pull Request Creation<a class="headerlink" href="#56-pull-request-creation" title="Permanent link">&para;</a></h3>
+<p>A pull request must be opened before integration. PRs should start as Draft PRs unless the work is already complete and self-checked.</p>
+<p>The PR body must include:</p>
+<ul>
+<li>summary;</li>
+<li>related issue;</li>
+<li>changed artifacts;</li>
+<li>validation evidence;</li>
+<li>acceptance criteria checklist;</li>
+<li>review notes or known limitations.</li>
+</ul>
+<h3 id="57-self-check">5.7 Self-Check<a class="headerlink" href="#57-self-check" title="Permanent link">&para;</a></h3>
+<p>Before marking a PR ready for review, the author must verify:</p>
+<ul>
+<li>scope matches the issue;</li>
+<li>acceptance criteria are addressed;</li>
+<li>changed files are intentional;</li>
+<li>documentation is updated where required;</li>
+<li>CI or manual validation has been performed;</li>
+<li>no unrelated changes are included.</li>
+</ul>
+<h3 id="58-review">5.8 Review<a class="headerlink" href="#58-review" title="Permanent link">&para;</a></h3>
+<p>Review must evaluate correctness, consistency, governance impact, and traceability. For governance or architecture artifacts, review must also check terminology, lifecycle alignment, and baseline impact.</p>
+<p>Review is a two-stage gate:</p>
+<ol>
+<li><strong>Testing Gate (omsp-tester).</strong> Before the sprint starts, every sprint issue receives a test-scenario checklist (<code>&lt;!-- omsp-test-checklist --&gt;</code> comment). When a PR opens, the linked issue moves to the <strong>Testing</strong> status on the GitHub Project. The tester executes the checklist against the PR branch and issues an evidence-based verdict: <strong>fail</strong> → test-report comment + <code>gate:test-failed</code> label + issue returns to In Progress; <strong>pass</strong> → test-report comment + <code>gate:tester-approved</code> label + issue moves to In Review.</li>
+<li><strong>CTO Gate (omsp-cto).</strong> After the tester gate, the CTO reviews TDD compliance (test checklist existed before implementation, scenarios cover the acceptance criteria, evidence is genuine) plus architecture and governance impact, and applies <code>gate:cto-approved</code>.</li>
+</ol>
+<h3 id="59-merge">5.9 Merge<a class="headerlink" href="#59-merge" title="Permanent link">&para;</a></h3>
+<p>Approved Work Packages merge into <code>develop</code> unless the issue explicitly defines a different target branch.</p>
+<p>A PR carrying both <code>gate:tester-approved</code> and <code>gate:cto-approved</code> with all other checks green is merged automatically by the <code>approval-gate-merge</code> workflow. Merge authority for this test-gated path is explicitly delegated by the project owner (decision recorded in issue #212); the owner retains override at all times by removing a gate label, closing the PR, or disabling the workflow. All other merge paths remain human-only.</p>
+<h3 id="510-closure">5.10 Closure<a class="headerlink" href="#510-closure" title="Permanent link">&para;</a></h3>
+<p>The related issue may be closed only after the PR is merged and traceability is preserved.</p>
+<h2 id="6-branch-strategy">6. Branch Strategy<a class="headerlink" href="#6-branch-strategy" title="Permanent link">&para;</a></h2>
+<p>OMSP uses the following branch model:</p>
+<ul>
+<li><code>main</code> is the protected release branch.</li>
+<li><code>develop</code> is the integration branch.</li>
+<li><code>feature/wp-xxxx-short-name</code> is used for Work Package implementation.</li>
+<li><code>release/x.y.z</code> is used for release preparation.</li>
+<li><code>hotfix/short-name</code> is used for urgent corrections.</li>
+</ul>
+<h3 id="61-main">6.1 <code>main</code><a class="headerlink" href="#61-main" title="Permanent link">&para;</a></h3>
+<p><code>main</code> represents the stable release line. Direct commits to <code>main</code> are not allowed except by explicitly approved emergency governance procedure.</p>
+<h3 id="62-develop">6.2 <code>develop</code><a class="headerlink" href="#62-develop" title="Permanent link">&para;</a></h3>
+<p><code>develop</code> is the integration branch for reviewed and approved work. Sprint work normally targets <code>develop</code>.</p>
+<h3 id="63-feature-branches">6.3 Feature Branches<a class="headerlink" href="#63-feature-branches" title="Permanent link">&para;</a></h3>
+<p>Feature branches must be linked to a Work Package issue. They should be deleted after merge unless needed for audit or release operations.</p>
+<h3 id="64-release-branches">6.4 Release Branches<a class="headerlink" href="#64-release-branches" title="Permanent link">&para;</a></h3>
+<p>Release branches stabilize a candidate release. Only release preparation, documentation, versioning, and approved fixes should occur on release branches.</p>
+<h3 id="65-hotfix-branches">6.5 Hotfix Branches<a class="headerlink" href="#65-hotfix-branches" title="Permanent link">&para;</a></h3>
+<p>Hotfix branches are reserved for urgent production or governance corrections. Hotfix work must still preserve issue and PR traceability.</p>
+<h2 id="7-pull-request-policy">7. Pull Request Policy<a class="headerlink" href="#7-pull-request-policy" title="Permanent link">&para;</a></h2>
+<p>Every meaningful change must be delivered through a pull request.</p>
+<h3 id="71-required-pr-metadata">7.1 Required PR Metadata<a class="headerlink" href="#71-required-pr-metadata" title="Permanent link">&para;</a></h3>
+<p>Each PR must include:</p>
+<ul>
+<li>related issue number;</li>
+<li>summary of change;</li>
+<li>files or artifacts changed;</li>
+<li>validation performed;</li>
+<li>risk notes if applicable;</li>
+<li>acceptance criteria status.</li>
+</ul>
+<h3 id="72-draft-prs">7.2 Draft PRs<a class="headerlink" href="#72-draft-prs" title="Permanent link">&para;</a></h3>
+<p>Draft PRs are used for early visibility and collaboration. A Draft PR may be incomplete, but it must not be merged.</p>
+<h3 id="73-ready-for-review">7.3 Ready for Review<a class="headerlink" href="#73-ready-for-review" title="Permanent link">&para;</a></h3>
+<p>A PR may be marked Ready for Review only after the author completes the self-check and confirms that the branch is reviewable.</p>
+<h3 id="74-review-expectations">7.4 Review Expectations<a class="headerlink" href="#74-review-expectations" title="Permanent link">&para;</a></h3>
+<p>Reviewers should check:</p>
+<ul>
+<li>alignment with issue scope;</li>
+<li>artifact quality and consistency;</li>
+<li>naming and lifecycle consistency;</li>
+<li>validation evidence;</li>
+<li>missing edge cases or governance gaps;</li>
+<li>whether baseline or release records must be updated.</li>
+</ul>
+<h3 id="75-merge-rules">7.5 Merge Rules<a class="headerlink" href="#75-merge-rules" title="Permanent link">&para;</a></h3>
+<p>A PR may be merged only when:</p>
+<ul>
+<li>acceptance criteria are satisfied;</li>
+<li>required checks pass or are explicitly waived;</li>
+<li>required review is complete — for test-gated PRs this means both <code>gate:tester-approved</code> and <code>gate:cto-approved</code> labels (see 5.8–5.9);</li>
+<li>conflicts are resolved;</li>
+<li>target branch is correct;</li>
+<li>the PR preserves traceability to the issue.</li>
+</ul>
+<h3 id="76-merge-method">7.6 Merge Method<a class="headerlink" href="#76-merge-method" title="Permanent link">&para;</a></h3>
+<p>The preferred merge method is the method configured by repository maintainers. When uncertain, use the repository default and preserve a clear PR title.</p>
+<h3 id="77-post-merge-actions">7.7 Post-Merge Actions<a class="headerlink" href="#77-post-merge-actions" title="Permanent link">&para;</a></h3>
+<p>After merge:</p>
+<ul>
+<li>verify the issue can be closed;</li>
+<li>update sprint status;</li>
+<li>update baseline or release records if required;</li>
+<li>ensure follow-up work is captured as new issues.</li>
+</ul>
+<h2 id="8-definition-of-done">8. Definition of Done<a class="headerlink" href="#8-definition-of-done" title="Permanent link">&para;</a></h2>
+<p>A Work Package is done only when:</p>
+<ul>
+<li>issue exists and describes the work;</li>
+<li>feature branch exists;</li>
+<li>implementation is committed;</li>
+<li>PR is opened;</li>
+<li>self-check is complete;</li>
+<li>review is complete;</li>
+<li>PR is merged into the target branch;</li>
+<li>related issue is closed;</li>
+<li>traceability is preserved;</li>
+<li>baseline or release artifacts are updated when applicable.</li>
+</ul>
+<p>Documentation-focused Work Packages must also ensure that terminology, version metadata, and related governance artifacts are consistent.</p>
+<h2 id="9-sprint-lifecycle">9. Sprint Lifecycle<a class="headerlink" href="#9-sprint-lifecycle" title="Permanent link">&para;</a></h2>
+<p>Each sprint has a defined backlog, completion criteria, and release or baseline target.</p>
+<h3 id="91-sprint-planning">9.1 Sprint Planning<a class="headerlink" href="#91-sprint-planning" title="Permanent link">&para;</a></h3>
+<p>Sprint planning must identify:</p>
+<ul>
+<li>sprint goal;</li>
+<li>selected Work Packages;</li>
+<li>expected deliverables;</li>
+<li>target branch or release path;</li>
+<li>risks and dependencies;</li>
+<li>completion criteria.</li>
+</ul>
+<h3 id="92-sprint-execution">9.2 Sprint Execution<a class="headerlink" href="#92-sprint-execution" title="Permanent link">&para;</a></h3>
+<p>During execution:</p>
+<ul>
+<li>work proceeds through issues and feature branches;</li>
+<li>progress is visible through issue and PR state;</li>
+<li>scope changes are recorded;</li>
+<li>blocked work is labeled or commented;</li>
+<li>governance changes are reviewed before merge.</li>
+</ul>
+<h3 id="93-sprint-review">9.3 Sprint Review<a class="headerlink" href="#93-sprint-review" title="Permanent link">&para;</a></h3>
+<p>Sprint review confirms:</p>
+<ul>
+<li>which Work Packages merged;</li>
+<li>which acceptance criteria were satisfied;</li>
+<li>which items moved forward;</li>
+<li>which baseline or release actions are required;</li>
+<li>which follow-up issues must be opened.</li>
+</ul>
+<h3 id="94-sprint-closure">9.4 Sprint Closure<a class="headerlink" href="#94-sprint-closure" title="Permanent link">&para;</a></h3>
+<p>A sprint may be closed when its required Work Packages are either completed, deferred, or explicitly removed from scope.</p>
+<h2 id="10-baseline-management">10. Baseline Management<a class="headerlink" href="#10-baseline-management" title="Permanent link">&para;</a></h2>
+<p>Baselines are controlled snapshots of repository state.</p>
+<h3 id="101-baseline-preconditions">10.1 Baseline Preconditions<a class="headerlink" href="#101-baseline-preconditions" title="Permanent link">&para;</a></h3>
+<p>A baseline may be created only when:</p>
+<ul>
+<li>required Work Packages are merged;</li>
+<li>governance and architecture artifacts are consistent;</li>
+<li>release notes or baseline notes are prepared if applicable;</li>
+<li>open risks are documented;</li>
+<li>approval is recorded by the appropriate human owner.</li>
+</ul>
+<h3 id="102-baseline-naming">10.2 Baseline Naming<a class="headerlink" href="#102-baseline-naming" title="Permanent link">&para;</a></h3>
+<p>Baseline names should be stable and meaningful.</p>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code>Sprint-0 Bootstrap Baseline
+Sprint-1 Governance Baseline
+v0.1.0-bootstrap
+</code></pre></div>
+<h3 id="103-baseline-authority">10.3 Baseline Authority<a class="headerlink" href="#103-baseline-authority" title="Permanent link">&para;</a></h3>
+<p>AI may help draft baseline content, validate consistency, and identify gaps. AI may not approve a baseline or override human governance decisions.</p>
+<h2 id="11-release-governance">11. Release Governance<a class="headerlink" href="#11-release-governance" title="Permanent link">&para;</a></h2>
+<p>Releases must be traceable to reviewed and merged work.</p>
+<p>A release must include:</p>
+<ul>
+<li>release identifier;</li>
+<li>source branch or tag;</li>
+<li>included Work Packages or PRs;</li>
+<li>notable changes;</li>
+<li>known limitations;</li>
+<li>approval or publication record.</li>
+</ul>
+<p>Release branches must be kept narrow and should not become general development branches.</p>
+<h2 id="12-labels-and-milestones">12. Labels and Milestones<a class="headerlink" href="#12-labels-and-milestones" title="Permanent link">&para;</a></h2>
+<p>Labels should make issue and PR state easy to understand.</p>
+<p>Recommended label categories:</p>
+<ul>
+<li>work type: <code>documentation</code>, <code>governance</code>, <code>ci</code>, <code>architecture</code>, <code>bug</code>, <code>feature</code>;</li>
+<li>workflow state: <code>blocked</code>, <code>ready-for-review</code>, <code>needs-decision</code>;</li>
+<li>sprint: <code>sprint-0</code>, <code>sprint-1</code>, and future sprint labels;</li>
+<li>risk or priority where needed.</li>
+</ul>
+<p>Milestones should group work by sprint, release, or baseline target.</p>
+<h2 id="13-traceability-rules">13. Traceability Rules<a class="headerlink" href="#13-traceability-rules" title="Permanent link">&para;</a></h2>
+<p>Traceability must be preserved across the following chain:</p>
+<div class="highlight"><pre><span></span><code>Issue → Branch → Commit(s) → Pull Request → Merge → Baseline/Release
+</code></pre></div>
+<p>Minimum traceability expectations:</p>
+<ul>
+<li>issue references branch name;</li>
+<li>branch name references Work Package ID where available;</li>
+<li>PR references issue number;</li>
+<li>commits use meaningful messages;</li>
+<li>baseline or release notes reference merged PRs or Work Packages.</li>
+</ul>
+<h2 id="14-documentation-governance">14. Documentation Governance<a class="headerlink" href="#14-documentation-governance" title="Permanent link">&para;</a></h2>
+<p>Documentation is an engineering artifact and must be reviewed with the same discipline as code.</p>
+<p>Documentation changes must check:</p>
+<ul>
+<li>metadata accuracy;</li>
+<li>version and status correctness;</li>
+<li>terminology consistency;</li>
+<li>relationship to existing governance artifacts;</li>
+<li>whether the change updates Sprint, baseline, or release behavior.</li>
+</ul>
+<h2 id="15-ai-assisted-development">15. AI Assisted Development<a class="headerlink" href="#15-ai-assisted-development" title="Permanent link">&para;</a></h2>
+<p>AI may assist with:</p>
+<ul>
+<li>drafting issues;</li>
+<li>creating branch and PR content;</li>
+<li>drafting documentation;</li>
+<li>analyzing diffs;</li>
+<li>identifying inconsistencies;</li>
+<li>preparing review checklists;</li>
+<li>summarizing sprint or baseline state.</li>
+</ul>
+<p>AI must not:</p>
+<ul>
+<li>approve baselines;</li>
+<li>approve releases;</li>
+<li>override human governance;</li>
+<li>silently expand scope;</li>
+<li>claim validation that was not performed;</li>
+<li>merge work without explicit human instruction.</li>
+</ul>
+<p>AI-generated work must remain reviewable and traceable through normal engineering workflow.</p>
+<h2 id="16-exceptions">16. Exceptions<a class="headerlink" href="#16-exceptions" title="Permanent link">&para;</a></h2>
+<p>Exceptions to this playbook must be explicit, documented, and approved by the appropriate human owner.</p>
+<p>An exception record should include:</p>
+<ul>
+<li>what rule is being waived;</li>
+<li>why the exception is needed;</li>
+<li>duration or scope of the exception;</li>
+<li>risk and mitigation;</li>
+<li>approving owner.</li>
+</ul>
+<h2 id="17-maintenance">17. Maintenance<a class="headerlink" href="#17-maintenance" title="Permanent link">&para;</a></h2>
+<p>This playbook is maintained by the OMSP Engineering Council.</p>
+<p>Updates require:</p>
+<ul>
+<li>issue-backed Work Package;</li>
+<li>feature branch;</li>
+<li>PR into the appropriate target branch;</li>
+<li>review for governance consistency;</li>
+<li>version metadata update when the lifecycle changes materially.</li>
+</ul>
+<p>Minor editorial corrections may update patch-level metadata. Material lifecycle changes must update minor or major version metadata according to governance impact.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      OMSP Foundation — engineering documentation, not operational guidance. Artifact lifecycle statuses (Draft / Review / Active) are shown as-is.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/OMSP-Foundation/omsp-bootstrap" target="_blank" rel="noopener" title="OMSP on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
