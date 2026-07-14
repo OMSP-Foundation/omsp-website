@@ -1,0 +1,3912 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open standards for knowledge-first, model-driven maritime systems engineering — the MODS documentation stack, governance and reference models, published from the omsp-bootstrap repository.">
+      
+      
+      
+        <link rel="canonical" href="https://omsp-foundation.github.io/omsp-website/dev/standards/knowledge/AI_READABLE_ARTIFACT_PROCESSING_CONTRACT/">
+      
+      
+        <link rel="prev" href="../../governance/PROGRAM_CHARTER/">
+      
+      
+        <link rel="next" href="../ARTIFACT_REGISTRY_AND_KNOWLEDGE_INDEX/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>OMSP AI-Readable Artifact Processing Contract - OMSP — Open Maritime Systems Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#omsp-ai-readable-artifact-processing-contract" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OMSP — Open Maritime Systems Platform" class="md-header__button md-logo" aria-label="OMSP — Open Maritime Systems Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0 2 2.83V9H8v2h3v8.92c-.74-.13-1.5-.34-2.21-.65-.74-.32-1.39-.71-1.97-1.18s-1.04-.98-1.38-1.54L7 15l-4-3v3c0 .97.27 1.88.82 2.72A8.2 8.2 0 0 0 6 19.95c.87.64 1.84 1.14 2.88 1.5 1.05.36 2.09.55 3.12.55s2.07-.2 3.12-.56c1.04-.36 2.01-.86 2.88-1.49.92-.64 1.63-1.38 2.18-2.23.55-.84.82-1.75.82-2.72v-3l-4 3 1.56 1.55c-.34.56-.8 1.07-1.38 1.54s-1.23.86-1.97 1.18c-.71.31-1.47.52-2.21.65V11h3V9h-3V7.82A3 3 0 0 0 15 5a3 3 0 0 0-3-3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OMSP — Open Maritime Systems Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OMSP AI-Readable Artifact Processing Contract
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OMSP-Foundation/omsp-bootstrap" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OMSP-Foundation/omsp-bootstrap
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Maritime Systems Platform
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../adopt/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Adopting OMSP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contribute/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../architecture/ARCHITECTURE_INDEX/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Standards
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OMSP — Open Maritime Systems Platform" class="md-nav__button md-logo" aria-label="OMSP — Open Maritime Systems Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0 2 2.83V9H8v2h3v8.92c-.74-.13-1.5-.34-2.21-.65-.74-.32-1.39-.71-1.97-1.18s-1.04-.98-1.38-1.54L7 15l-4-3v3c0 .97.27 1.88.82 2.72A8.2 8.2 0 0 0 6 19.95c.87.64 1.84 1.14 2.88 1.5 1.05.36 2.09.55 3.12.55s2.07-.2 3.12-.56c1.04-.36 2.01-.86 2.88-1.49.92-.64 1.63-1.38 2.18-2.23.55-.84.82-1.75.82-2.72v-3l-4 3 1.56 1.55c-.34.56-.8 1.07-1.38 1.54s-1.23.86-1.97 1.18c-.71.31-1.47.52-2.21.65V11h3V9h-3V7.82A3 3 0 0 0 15 5a3 3 0 0 0-3-3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"/></svg>
+
+    </a>
+    OMSP — Open Maritime Systems Platform
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OMSP-Foundation/omsp-bootstrap" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OMSP-Foundation/omsp-bootstrap
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Maritime Systems Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adopt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adopting OMSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/ARCHITECTURE_INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Architecture Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/PLATFORM_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Platform Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/PLATFORM_CONTEXT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Platform Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/PUBLICATION_WORKFLOW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Publication Engine Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Canon
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Canon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/CANON_INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Canon Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/ENGINEERING_METHODOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/MISSION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Mission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/ONTOLOGY_OVERVIEW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Ontology Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/PHILOSOPHY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/PRINCIPLES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/TERMINOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Terminology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/VISION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ADR-0001-REPOSITORY-TOPOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0001: Repository Topology for the MODS Product Stack — Monorepo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ADR-0002-AUTOMATED-RELEASE-PIPELINE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0002: Automated Release Pipeline with Standing Human Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ADR-0003-PYTHON-VALIDATION-DEPENDENCIES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0003: Pinned Python Dependencies for Schema Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/AI_GOVERNANCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/CONSTITUTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Constitution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DECISION_AND_REVIEW_POLICY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Decision and Review Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ENGINEERING_ARTIFACT_STANDARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Artifact Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ENGINEERING_COUNCIL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Council Charter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ENGINEERING_PLAYBOOK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/GOVERNANCE_MODEL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Governance Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/METADATA_AND_TRACEABILITY_STANDARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Metadata and Traceability Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/PROGRAM_CHARTER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Program Charter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Knowledge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP AI-Readable Artifact Processing Contract
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP AI-Readable Artifact Processing Contract
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-processing-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Processing Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-input-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Input Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-required-input-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Required Input Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-source-authority-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Source Authority Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-interpretation-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Interpretation Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-output-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Output Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-change-proposal-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Change Proposal Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-confidence-and-uncertainty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Confidence and Uncertainty
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-provenance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Provenance Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-human-review-and-approval-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Human Review and Approval Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-failure-and-refusal-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Failure and Refusal Conditions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Validation Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-example-processing-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Example Processing Record
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-implementation-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Implementation Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Evolution
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARTIFACT_REGISTRY_AND_KNOWLEDGE_INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Artifact Registry and Knowledge Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KNOWLEDGE_GRAPH_CONCEPTUAL_MODEL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Knowledge Graph Conceptual Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KNOWLEDGE_PLATFORM_VALIDATION_SCENARIOS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Knowledge Platform Validation Scenarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KNOWLEDGE_PUBLICATION_PACKAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Knowledge Publication Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SEMANTIC_RELATIONSHIP_CATALOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Semantic Relationship Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPRINT_3_BASELINE_RELEASE_READINESS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint-3 Baseline and Release Readiness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ontology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ontology/MARITIME_ONTOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maritime Core Ontology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ontology/OMSP_ONTOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Formal Ontology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0069-ENGINEERING_METHODOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0069 — Engineering Methodology Canonical Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0070-AUDIT-DISPOSITION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0070 — Audit Reconciliation Disposition Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0074-GOLDEN-PATH-DEFINITION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0074 — Hanse 460 Golden Path Product Definition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0075-DOMAIN-BACKLOG-REBASELINE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0075 — Domain Roadmap &amp; Backlog Re-baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0076-V051-BASELINE-READINESS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0076 — v0.5.1 Clean Baseline and Release Readiness Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Publication
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7_1" id="__nav_4_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mods
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mods
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publication/mods/MODS_RENDERER_CONFORMANCE_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MODS Renderer Conformance Checklist v0.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publication/mods/MODS_SPECIFICATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MODS Specification v0.1 — Maritime Operations Documentation Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publication/mods/ODS-100-DOCUMENT-STRUCTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ODS-100 — Operational Document Structure Standard (Draft)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publication/mods/ODS-300-PROCEDURE-LANGUAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ODS-300 — Operational Procedure Language Standard (Draft)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schemas/MARITIME_INSTANCE_SCHEMAS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maritime Instance Schemas v0.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/ADR_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Decision Record (ADR) Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/REQUIREMENT_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirement Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/RISK_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/VALIDATION_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Record Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/WORK_PACKAGE_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Package Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Validation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/BASELINE_READINESS_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Baseline Readiness Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/GITHUB_QUALITY_GATES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP GitHub Quality Gates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/PUBLICATION_READINESS_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication Readiness Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/QUALITY_GATES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Quality Gates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/RELEASE_READINESS_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Release Readiness Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/REPOSITORY_STRUCTURE_VALIDATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Repository Structure Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/VALIDATION_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Validation Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/VALIDATION_FRAMEWORK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Validation Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/VERIFICATION_FRAMEWORK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Verification Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10_10" id="__nav_4_10_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/examples/PR-55_VALIDATION_EVIDENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Validation Evidence for PR #55
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-processing-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Processing Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-input-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Input Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-required-input-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Required Input Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-source-authority-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Source Authority Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-interpretation-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Interpretation Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-output-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Output Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-change-proposal-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Change Proposal Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-confidence-and-uncertainty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Confidence and Uncertainty
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-provenance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Provenance Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-human-review-and-approval-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Human Review and Approval Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-failure-and-refusal-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Failure and Refusal Conditions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Validation Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-example-processing-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Example Processing Record
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-implementation-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Implementation Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Evolution
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="omsp-ai-readable-artifact-processing-contract">OMSP AI-Readable Artifact Processing Contract<a class="headerlink" href="#omsp-ai-readable-artifact-processing-contract" title="Permanent link">&para;</a></h1>
+<h2 id="1-purpose">1. Purpose<a class="headerlink" href="#1-purpose" title="Permanent link">&para;</a></h2>
+<p>This contract defines how AI-assisted tools may read, interpret, analyze and propose changes to governed OMSP artifacts while preserving artifact identity, provenance, lifecycle state and accountable human authority.</p>
+<p>AI-assisted processing is advisory. It may generate drafts, summaries, classifications, relationship proposals, validation findings and change proposals. It does not approve artifacts, change lifecycle authority, create baselines, authorize releases or accept risk.</p>
+<h2 id="2-scope">2. Scope<a class="headerlink" href="#2-scope" title="Permanent link">&para;</a></h2>
+<p>This contract applies to AI-assisted processing of:</p>
+<ul>
+<li>governed Markdown artifacts;</li>
+<li>machine-readable ontology and registry records;</li>
+<li>knowledge graph nodes and relationships;</li>
+<li>validation and traceability evidence;</li>
+<li>issue, branch, commit and pull-request context;</li>
+<li>baseline and release records.</li>
+</ul>
+<p>It does not define a specific model provider, prompt framework, agent runtime, vector database, retrieval system or inference platform.</p>
+<h2 id="3-processing-principles">3. Processing Principles<a class="headerlink" href="#3-processing-principles" title="Permanent link">&para;</a></h2>
+<p>AI-assisted processing must follow these principles:</p>
+<ol>
+<li><strong>Identity preservation</strong> — existing Artifact IDs, relation IDs and governed references must not be silently rewritten.</li>
+<li><strong>Provenance preservation</strong> — every material output must identify the sources and processing context used.</li>
+<li><strong>Lifecycle preservation</strong> — Draft, Review, Active, Superseded, Deprecated, Retired, baseline and release states must remain distinguishable.</li>
+<li><strong>Proposal-only authority</strong> — generated changes remain proposals until accepted through governed human review.</li>
+<li><strong>Uncertainty visibility</strong> — confidence, assumptions, missing context and unresolved ambiguity must be explicit.</li>
+<li><strong>No invented evidence</strong> — issue, PR, commit, review, baseline, release or approval references must not be fabricated.</li>
+<li><strong>Least-authority interpretation</strong> — ambiguous content must not be interpreted as granting approval, certification or operational authority.</li>
+<li><strong>Reproducible context</strong> — inputs and relevant processing parameters should be recordable enough for review and later reproduction.</li>
+</ol>
+<h2 id="4-input-contract">4. Input Contract<a class="headerlink" href="#4-input-contract" title="Permanent link">&para;</a></h2>
+<p>An AI processing request should use the following logical structure:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">request_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AI-REQUEST-&lt;unique-id&gt;</span>
+<span class="nt">operation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">summarize | classify | extract | validate | compare | propose-change | map-relations | generate-draft</span>
+<span class="nt">requested_by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">human actor or governed workflow</span>
+<span class="nt">requested_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISO-8601 timestamp</span>
+<span class="nt">purpose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">human-readable processing objective</span>
+<span class="nt">sources</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Artifact ID, file path, issue, PR, commit, baseline or release reference</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source version or commit SHA</span>
+<span class="w">    </span><span class="nt">lifecycle_status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Draft | Review | Active | Superseded | Deprecated | Retired</span>
+<span class="w">    </span><span class="nt">content_hash</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">optional integrity hash</span>
+<span class="w">    </span><span class="nt">authoritative</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true | false</span>
+<span class="nt">context</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ontology_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Artifact ID and version</span>
+<span class="w">  </span><span class="nt">registry_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Artifact ID, file version or commit SHA</span>
+<span class="w">  </span><span class="nt">baseline_context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">optional baseline identifier</span>
+<span class="w">  </span><span class="nt">release_context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">optional release identifier</span>
+<span class="nt">constraints</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">allowed_operations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">  </span><span class="nt">prohibited_operations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">  </span><span class="nt">required_output_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">markdown | json | yaml | patch | report</span>
+<span class="w">  </span><span class="nt">human_review_required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<h2 id="5-required-input-context">5. Required Input Context<a class="headerlink" href="#5-required-input-context" title="Permanent link">&para;</a></h2>
+<p>Material processing must include, where applicable:</p>
+<ul>
+<li>source Artifact ID and version;</li>
+<li>source lifecycle status;</li>
+<li>repository and file path;</li>
+<li>commit SHA or governed baseline reference;</li>
+<li>authoritative versus supporting-source classification;</li>
+<li>applicable ontology and semantic relationship catalog versions;</li>
+<li>registry or knowledge-index reference;</li>
+<li>requested processing purpose;</li>
+<li>human requester or initiating governed workflow;</li>
+<li>known exclusions and unavailable sources.</li>
+</ul>
+<p>When required context is absent, the processor must either stop or return a limited result marked with explicit uncertainty.</p>
+<h2 id="6-source-authority-rules">6. Source Authority Rules<a class="headerlink" href="#6-source-authority-rules" title="Permanent link">&para;</a></h2>
+<p>Sources must be classified before interpretation:</p>
+<table>
+<thead>
+<tr>
+<th>Source class</th>
+<th>Meaning</th>
+<th>Permitted use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authoritative</td>
+<td>Active governed artifact or approved baseline/release record</td>
+<td>Primary interpretation source</td>
+</tr>
+<tr>
+<td>Review candidate</td>
+<td>Artifact in Review</td>
+<td>Proposal analysis; not current authority</td>
+</tr>
+<tr>
+<td>Draft</td>
+<td>Unapproved working content</td>
+<td>Drafting and comparison only</td>
+</tr>
+<tr>
+<td>Historical</td>
+<td>Superseded, Deprecated or Retired artifact</td>
+<td>History, migration and conflict analysis</td>
+</tr>
+<tr>
+<td>Evidence</td>
+<td>Validation, review or approval record</td>
+<td>Support claims; does not replace governing artifact</td>
+</tr>
+<tr>
+<td>External reference</td>
+<td>Non-OMSP source</td>
+<td>Context only unless separately adopted</td>
+</tr>
+</tbody>
+</table>
+<p>A newer timestamp does not automatically make a source authoritative. Lifecycle state and accountable approval evidence govern authority.</p>
+<h2 id="7-interpretation-contract">7. Interpretation Contract<a class="headerlink" href="#7-interpretation-contract" title="Permanent link">&para;</a></h2>
+<p>The processor must:</p>
+<ul>
+<li>preserve exact governed identifiers;</li>
+<li>distinguish quoted source content from generated interpretation;</li>
+<li>use ontology concepts and cataloged relation IDs where available;</li>
+<li>avoid replacing specific relationships with generic links;</li>
+<li>distinguish asserted facts from inferred relationships;</li>
+<li>identify conflicts between authoritative sources;</li>
+<li>avoid resolving governance conflicts without human instruction;</li>
+<li>carry forward lifecycle and provenance metadata into outputs.</li>
+</ul>
+<h2 id="8-output-contract">8. Output Contract<a class="headerlink" href="#8-output-contract" title="Permanent link">&para;</a></h2>
+<p>Every material AI output should provide:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">response_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AI-RESPONSE-&lt;unique-id&gt;</span>
+<span class="nt">request_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AI-REQUEST-&lt;unique-id&gt;</span>
+<span class="nt">output_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">summary | finding | proposal | patch | relation-set | draft-artifact</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">proposed</span>
+<span class="nt">sources_used</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">governed reference</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source version or commit SHA</span>
+<span class="w">    </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">authoritative | supporting | historical | external</span>
+<span class="nt">claims</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">statement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">generated statement</span>
+<span class="w">    </span><span class="nt">support</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">source references</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">confidence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">high | medium | low | unknown</span>
+<span class="w">    </span><span class="nt">basis</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">direct | derived | inferred</span>
+<span class="nt">assumptions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">uncertainties</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">conflicts</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">proposed_changes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">required_human_actions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">generated_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISO-8601 timestamp</span>
+<span class="nt">processor_identity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tool/model/runtime identifier when available</span>
+</code></pre></div>
+<p>All generated lifecycle changes, approval statements, baseline decisions and release decisions must be represented only as proposals requiring accountable human action.</p>
+<h2 id="9-change-proposal-contract">9. Change Proposal Contract<a class="headerlink" href="#9-change-proposal-contract" title="Permanent link">&para;</a></h2>
+<p>A proposed artifact change must identify:</p>
+<ul>
+<li>target Artifact ID and current version;</li>
+<li>target repository path;</li>
+<li>source commit or baseline used;</li>
+<li>proposed semantic version effect;</li>
+<li>changed sections or fields;</li>
+<li>rationale;</li>
+<li>supporting sources;</li>
+<li>affected relationships and downstream artifacts;</li>
+<li>compatibility classification;</li>
+<li>validation recommended;</li>
+<li>unresolved risks;</li>
+<li>required human reviewers or governance body.</li>
+</ul>
+<p>A generated patch must not be described as accepted, approved, active, baselined or released before the corresponding human-controlled workflow is completed.</p>
+<h2 id="10-confidence-and-uncertainty">10. Confidence and Uncertainty<a class="headerlink" href="#10-confidence-and-uncertainty" title="Permanent link">&para;</a></h2>
+<p>Confidence is a statement about evidential support, not authority.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td>Directly supported by consistent authoritative sources</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>Supported by sources but requires interpretation or incomplete context</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Weak support, ambiguity, conflict or significant missing context</td>
+</tr>
+<tr>
+<td>Unknown</td>
+<td>Confidence cannot be responsibly assessed</td>
+</tr>
+</tbody>
+</table>
+<p>Outputs must separately identify:</p>
+<ul>
+<li>missing source context;</li>
+<li>conflicting artifact versions;</li>
+<li>unresolved terminology;</li>
+<li>inferred rather than asserted relationships;</li>
+<li>stale or historical sources;</li>
+<li>limitations of the processing method.</li>
+</ul>
+<p>High confidence does not authorize approval or lifecycle promotion.</p>
+<h2 id="11-provenance-requirements">11. Provenance Requirements<a class="headerlink" href="#11-provenance-requirements" title="Permanent link">&para;</a></h2>
+<p>A processing record should preserve:</p>
+<ul>
+<li>request and response identifiers;</li>
+<li>initiating human or governed workflow;</li>
+<li>source references and versions;</li>
+<li>content hashes where practical;</li>
+<li>processor identity and version where available;</li>
+<li>processing timestamp;</li>
+<li>generated output location;</li>
+<li>subsequent human review evidence;</li>
+<li>accepted, rejected or modified outcome.</li>
+</ul>
+<p>Provenance records may be indexed in the artifact registry or knowledge graph, but they must remain distinguishable from governing artifacts.</p>
+<h2 id="12-human-review-and-approval-boundaries">12. Human Review and Approval Boundaries<a class="headerlink" href="#12-human-review-and-approval-boundaries" title="Permanent link">&para;</a></h2>
+<p>AI may:</p>
+<ul>
+<li>draft artifacts and change proposals;</li>
+<li>extract metadata and relationships;</li>
+<li>detect structural inconsistencies;</li>
+<li>propose validation findings;</li>
+<li>summarize evidence;</li>
+<li>compare versions;</li>
+<li>recommend reviewers and follow-up actions.</li>
+</ul>
+<p>AI must not:</p>
+<ul>
+<li>approve an artifact;</li>
+<li>change an artifact to Active;</li>
+<li>create or approve a baseline;</li>
+<li>authorize a release;</li>
+<li>record accountable risk acceptance;</li>
+<li>claim certification or regulatory acceptance;</li>
+<li>impersonate a human approver;</li>
+<li>invent approval, review or evidence records;</li>
+<li>bypass issue, branch, PR and review controls.</li>
+</ul>
+<h2 id="13-failure-and-refusal-conditions">13. Failure and Refusal Conditions<a class="headerlink" href="#13-failure-and-refusal-conditions" title="Permanent link">&para;</a></h2>
+<p>The processor must stop, refuse or produce a constrained result when:</p>
+<ul>
+<li>the target Artifact ID is ambiguous;</li>
+<li>authoritative source versions conflict and no governing precedence is available;</li>
+<li>required provenance is missing;</li>
+<li>the request asks the processor to fabricate evidence or approval;</li>
+<li>the request asks for unauthorized lifecycle promotion;</li>
+<li>source classification or access restrictions are unknown;</li>
+<li>the requested operation could overwrite governed identity or history;</li>
+<li>safety-critical or regulatory claims lack accountable human review.</li>
+</ul>
+<h2 id="14-validation-rules">14. Validation Rules<a class="headerlink" href="#14-validation-rules" title="Permanent link">&para;</a></h2>
+<p>A future validator should be able to check:</p>
+<ul>
+<li>request and response IDs exist;</li>
+<li>all material claims reference sources;</li>
+<li>source versions or commit references are present;</li>
+<li>output status is <code>proposed</code> for AI-generated changes;</li>
+<li>uncertainty fields exist when confidence is not high;</li>
+<li>lifecycle states are preserved;</li>
+<li>Active, baseline and release actions require human evidence;</li>
+<li>no AI identity is used as the source of an approval relation;</li>
+<li>generated references resolve to real artifacts or repository entities;</li>
+<li>inferred relations are distinguishable from asserted relations.</li>
+</ul>
+<h2 id="15-example-processing-record">15. Example Processing Record<a class="headerlink" href="#15-example-processing-record" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nt">request_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AI-REQUEST-2026-0001</span>
+<span class="nt">operation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">propose-change</span>
+<span class="nt">requested_by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Accountable Maintainer</span>
+<span class="nt">purpose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Identify missing provenance fields in an artifact registry entry</span>
+<span class="nt">sources</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OMSP-KNOWLEDGE-REGISTRY-0001</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
+<span class="w">    </span><span class="nt">lifecycle_status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Review</span>
+<span class="w">    </span><span class="nt">authoritative</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">constraints</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">allowed_operations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">validate</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">propose-change</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">prohibited_operations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">approve</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">activate</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">baseline</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">release</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">required_output_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report</span>
+<span class="w">  </span><span class="nt">human_review_required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span>
+<span class="nt">response_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AI-RESPONSE-2026-0001</span>
+<span class="nt">request_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AI-REQUEST-2026-0001</span>
+<span class="nt">output_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">proposal</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">proposed</span>
+<span class="nt">claims</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">statement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The example record does not include approval evidence.</span>
+<span class="w">    </span><span class="nt">support</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">OMSP-KNOWLEDGE-REGISTRY-0001</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">confidence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">high</span>
+<span class="w">    </span><span class="nt">basis</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">direct</span>
+<span class="nt">uncertainties</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">proposed_changes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add an explicit approval_evidence field when lifecycle_status is Active.</span>
+<span class="nt">required_human_actions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Review the proposal and decide whether the registry schema should change.</span>
+</code></pre></div>
+<h2 id="16-implementation-boundaries">16. Implementation Boundaries<a class="headerlink" href="#16-implementation-boundaries" title="Permanent link">&para;</a></h2>
+<p>This contract does not implement:</p>
+<ul>
+<li>a production AI agent or orchestration runtime;</li>
+<li>a retrieval or vector-search platform;</li>
+<li>automated write access to governed branches;</li>
+<li>autonomous PR merge or approval;</li>
+<li>automatic lifecycle promotion;</li>
+<li>a certification, safety or regulatory decision system.</li>
+</ul>
+<p>Implementations must treat this artifact as a governance and interoperability contract, not as permission for autonomous authority.</p>
+<h2 id="17-evolution">17. Evolution<a class="headerlink" href="#17-evolution" title="Permanent link">&para;</a></h2>
+<p>Material changes to this contract require:</p>
+<ul>
+<li>an issue-backed Work Package;</li>
+<li>compatibility and downstream-impact analysis;</li>
+<li>feature branch and pull request;</li>
+<li>review against ontology, registry, traceability and governance standards;</li>
+<li>accountable human approval before Active status or baseline inclusion.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      OMSP Foundation — engineering documentation, not operational guidance. Artifact lifecycle statuses (Draft / Review / Active) are shown as-is.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/OMSP-Foundation/omsp-bootstrap" target="_blank" rel="noopener" title="OMSP on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

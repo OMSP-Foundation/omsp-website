@@ -1,0 +1,3905 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open standards for knowledge-first, model-driven maritime systems engineering — the MODS documentation stack, governance and reference models, published from the omsp-bootstrap repository.">
+      
+      
+      
+        <link rel="canonical" href="https://omsp-foundation.github.io/omsp-website/dev/standards/ontology/MARITIME_ONTOLOGY/">
+      
+      
+        <link rel="prev" href="../../knowledge/SPRINT_3_BASELINE_RELEASE_READINESS/">
+      
+      
+        <link rel="next" href="../OMSP_ONTOLOGY/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Maritime Core Ontology - OMSP — Open Maritime Systems Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#maritime-core-ontology" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OMSP — Open Maritime Systems Platform" class="md-header__button md-logo" aria-label="OMSP — Open Maritime Systems Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0 2 2.83V9H8v2h3v8.92c-.74-.13-1.5-.34-2.21-.65-.74-.32-1.39-.71-1.97-1.18s-1.04-.98-1.38-1.54L7 15l-4-3v3c0 .97.27 1.88.82 2.72A8.2 8.2 0 0 0 6 19.95c.87.64 1.84 1.14 2.88 1.5 1.05.36 2.09.55 3.12.55s2.07-.2 3.12-.56c1.04-.36 2.01-.86 2.88-1.49.92-.64 1.63-1.38 2.18-2.23.55-.84.82-1.75.82-2.72v-3l-4 3 1.56 1.55c-.34.56-.8 1.07-1.38 1.54s-1.23.86-1.97 1.18c-.71.31-1.47.52-2.21.65V11h3V9h-3V7.82A3 3 0 0 0 15 5a3 3 0 0 0-3-3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OMSP — Open Maritime Systems Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Maritime Core Ontology
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OMSP-Foundation/omsp-bootstrap" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OMSP-Foundation/omsp-bootstrap
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Maritime Systems Platform
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../adopt/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Adopting OMSP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contribute/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../architecture/ARCHITECTURE_INDEX/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Standards
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OMSP — Open Maritime Systems Platform" class="md-nav__button md-logo" aria-label="OMSP — Open Maritime Systems Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0 2 2.83V9H8v2h3v8.92c-.74-.13-1.5-.34-2.21-.65-.74-.32-1.39-.71-1.97-1.18s-1.04-.98-1.38-1.54L7 15l-4-3v3c0 .97.27 1.88.82 2.72A8.2 8.2 0 0 0 6 19.95c.87.64 1.84 1.14 2.88 1.5 1.05.36 2.09.55 3.12.55s2.07-.2 3.12-.56c1.04-.36 2.01-.86 2.88-1.49.92-.64 1.63-1.38 2.18-2.23.55-.84.82-1.75.82-2.72v-3l-4 3 1.56 1.55c-.34.56-.8 1.07-1.38 1.54s-1.23.86-1.97 1.18c-.71.31-1.47.52-2.21.65V11h3V9h-3V7.82A3 3 0 0 0 15 5a3 3 0 0 0-3-3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"/></svg>
+
+    </a>
+    OMSP — Open Maritime Systems Platform
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OMSP-Foundation/omsp-bootstrap" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OMSP-Foundation/omsp-bootstrap
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Maritime Systems Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adopt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adopting OMSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/ARCHITECTURE_INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Architecture Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/PLATFORM_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Platform Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/PLATFORM_CONTEXT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Platform Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/PUBLICATION_WORKFLOW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Publication Engine Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Canon
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Canon
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/CANON_INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Canon Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/ENGINEERING_METHODOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/MISSION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Mission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/ONTOLOGY_OVERVIEW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Ontology Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/PHILOSOPHY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/PRINCIPLES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/TERMINOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Terminology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../canon/VISION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ADR-0001-REPOSITORY-TOPOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0001: Repository Topology for the MODS Product Stack — Monorepo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ADR-0002-AUTOMATED-RELEASE-PIPELINE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0002: Automated Release Pipeline with Standing Human Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ADR-0003-PYTHON-VALIDATION-DEPENDENCIES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0003: Pinned Python Dependencies for Schema Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/AI_GOVERNANCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/CONSTITUTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Constitution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DECISION_AND_REVIEW_POLICY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Decision and Review Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ENGINEERING_ARTIFACT_STANDARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Artifact Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ENGINEERING_COUNCIL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Council Charter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ENGINEERING_PLAYBOOK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Engineering Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/GOVERNANCE_MODEL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Governance Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/METADATA_AND_TRACEABILITY_STANDARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Metadata and Traceability Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/PROGRAM_CHARTER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Program Charter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Knowledge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/AI_READABLE_ARTIFACT_PROCESSING_CONTRACT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP AI-Readable Artifact Processing Contract
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/ARTIFACT_REGISTRY_AND_KNOWLEDGE_INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Artifact Registry and Knowledge Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/KNOWLEDGE_GRAPH_CONCEPTUAL_MODEL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Knowledge Graph Conceptual Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/KNOWLEDGE_PLATFORM_VALIDATION_SCENARIOS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Knowledge Platform Validation Scenarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/KNOWLEDGE_PUBLICATION_PACKAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Knowledge Publication Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/SEMANTIC_RELATIONSHIP_CATALOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Semantic Relationship Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge/SPRINT_3_BASELINE_RELEASE_READINESS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint-3 Baseline and Release Readiness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ontology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maritime Core Ontology
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maritime Core Ontology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-purpose-and-relationship-to-the-core-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Purpose and Relationship to the Core Ontology
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-concept-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Concept Taxonomy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Concept Taxonomy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-definition-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Definition sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-classification-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Classification decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-relation-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Relation Taxonomy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Relation Taxonomy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-relation-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Relation semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-core-to-maritime-concept-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Core-to-Maritime Concept Mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-golden-path-expressibility-demonstration-non-normative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Golden-Path Expressibility Demonstration (non-normative)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-change-evidence-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Change Evidence Record
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OMSP_ONTOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Formal Ontology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0069-ENGINEERING_METHODOLOGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0069 — Engineering Methodology Canonical Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0070-AUDIT-DISPOSITION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0070 — Audit Reconciliation Disposition Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0074-GOLDEN-PATH-DEFINITION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0074 — Hanse 460 Golden Path Product Definition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0075-DOMAIN-BACKLOG-REBASELINE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0075 — Domain Roadmap &amp; Backlog Re-baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/WP-0076-V051-BASELINE-READINESS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WP-0076 — v0.5.1 Clean Baseline and Release Readiness Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Publication
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7_1" id="__nav_4_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mods
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mods
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publication/mods/MODS_RENDERER_CONFORMANCE_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MODS Renderer Conformance Checklist v0.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publication/mods/MODS_SPECIFICATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MODS Specification v0.1 — Maritime Operations Documentation Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publication/mods/ODS-100-DOCUMENT-STRUCTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ODS-100 — Operational Document Structure Standard (Draft)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publication/mods/ODS-300-PROCEDURE-LANGUAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ODS-300 — Operational Procedure Language Standard (Draft)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schemas/MARITIME_INSTANCE_SCHEMAS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maritime Instance Schemas v0.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/ADR_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Decision Record (ADR) Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/REQUIREMENT_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirement Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/RISK_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/VALIDATION_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Record Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/WORK_PACKAGE_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Package Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Validation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/BASELINE_READINESS_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Baseline Readiness Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/GITHUB_QUALITY_GATES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP GitHub Quality Gates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/PUBLICATION_READINESS_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication Readiness Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/QUALITY_GATES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Quality Gates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/RELEASE_READINESS_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Release Readiness Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/REPOSITORY_STRUCTURE_VALIDATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Repository Structure Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/VALIDATION_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Validation Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/VALIDATION_FRAMEWORK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Validation Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/VERIFICATION_FRAMEWORK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OMSP Verification Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10_10" id="__nav_4_10_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validation/examples/PR-55_VALIDATION_EVIDENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Validation Evidence for PR #55
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-purpose-and-relationship-to-the-core-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Purpose and Relationship to the Core Ontology
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-concept-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Concept Taxonomy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Concept Taxonomy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-definition-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Definition sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-classification-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Classification decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-relation-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Relation Taxonomy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Relation Taxonomy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-relation-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Relation semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-core-to-maritime-concept-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Core-to-Maritime Concept Mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-golden-path-expressibility-demonstration-non-normative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Golden-Path Expressibility Demonstration (non-normative)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-change-evidence-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Change Evidence Record
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="maritime-core-ontology">Maritime Core Ontology<a class="headerlink" href="#maritime-core-ontology" title="Permanent link">&para;</a></h1>
+<h2 id="1-purpose-and-relationship-to-the-core-ontology">1. Purpose and Relationship to the Core Ontology<a class="headerlink" href="#1-purpose-and-relationship-to-the-core-ontology" title="Permanent link">&para;</a></h2>
+<p>This artifact defines the first maritime domain extension of the OMSP formal
+ontology (<code>OMSP-ONTOLOGY-CORE-0001</code>). It introduces stable concept and
+relation identifiers for describing a vessel as a system of systems: its
+functional systems, equipment roles, ports, interfaces, connections,
+protection, measurement points, operational scenarios and provenance records.</p>
+<p>The extension is strictly <strong>additive</strong>:</p>
+<ul>
+<li>it <strong>extends</strong> the core ontology and <strong>does not modify</strong> any existing core
+  concept, relation, domain, range or constraint;</li>
+<li>every maritime concept declares a parent in the core taxonomy
+  (<code>OMSP-ONTOLOGY-CORE-0001</code> §4), so core reasoning and validation rules
+  apply unchanged;</li>
+<li>core relations (<code>belongs-to</code>, <code>depends-on</code>, <code>uses</code>, <code>implements</code>,
+  <code>traces-to</code>, …) are reused as defined in <code>OMSP-ONTOLOGY-CORE-0001</code> §5 and
+  are <strong>not</strong> redefined here;</li>
+<li>identity rules follow <code>OMSP-ONTOLOGY-CORE-0001</code> §3 (<code>OMSP-CONCEPT-&lt;NAME&gt;</code>,
+  <code>OMSP-RELATION-&lt;NAME&gt;</code>; identities are never reused for a different
+  meaning).</li>
+</ul>
+<p>Machine-readable entries live in <code>ontology/omsp-ontology.json</code>. Maritime
+entries carry the marker field <code>"layer": "maritime"</code>; entries without a
+<code>layer</code> field belong to the core layer and remain normatively defined by
+<code>OMSP-ONTOLOGY-CORE-0001</code>.</p>
+<p><strong>Domain-neutrality rule (binding for this layer):</strong> every definition in this
+artifact must apply, word for word, to any vessel system slice — for example
+a freshwater or bilge system as well as an energy system. No concept or
+relation in this layer may encode an equipment type, a vessel model, a
+physical quantity kind or a transported-medium kind. Such specifics are
+instances and attributes of downstream models, not ontology identities.</p>
+<h2 id="2-concept-taxonomy">2. Concept Taxonomy<a class="headerlink" href="#2-concept-taxonomy" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept ID</th>
+<th>Preferred label</th>
+<th>Definition</th>
+<th>Parent concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OMSP-CONCEPT-VESSEL</code></td>
+<td>Vessel</td>
+<td>A waterborne craft represented as a governed system of systems, with stable identity maintained across type, design, configuration and instance layers.</td>
+<td>System</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-VESSEL-SYSTEM</code></td>
+<td>Vessel System</td>
+<td>A functionally bounded grouping of equipment roles, ports and connections aboard a vessel, serving one coherent purpose within the vessel decomposition.</td>
+<td>System</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-EQUIPMENT-ROLE</code></td>
+<td>Equipment Role</td>
+<td>An identified functional position within a vessel system that equipment is intended to fill in a versioned configuration, independent of any physical item.</td>
+<td>Entity</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-PORT</code></td>
+<td>Port</td>
+<td>A declared point on an equipment role or vessel system through which a medium, signal or service enters or leaves.</td>
+<td>Entity</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-INTERFACE</code></td>
+<td>Interface</td>
+<td>A typed contract describing how ports may interact, including interface family, media or signal kind, direction and declared limits where evidenced.</td>
+<td>Entity</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-CONNECTION</code></td>
+<td>Connection</td>
+<td>A realized link between two ports in a specific configuration, carrying the media or service described by an interface.</td>
+<td>Entity</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-PROTECTION</code></td>
+<td>Protection</td>
+<td>The ability to limit, interrupt or isolate conditions that could harm people, equipment, connections or the media they carry.</td>
+<td>Capability</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-MEASUREMENT-POINT</code></td>
+<td>Measurement Point</td>
+<td>An identified physical or logical point at which a quantity or state of a system element is observed and recorded as evidence.</td>
+<td>Entity</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-OPERATIONAL-SCENARIO</code></td>
+<td>Operational Scenario</td>
+<td>A structured, bounded representation of actors, context, preconditions, triggers, steps, decisions, hazards, outcomes and human-authority boundaries for a maritime activity.</td>
+<td>Model</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-SOURCE-RECORD</code></td>
+<td>Source Record</td>
+<td>A traceable provenance record identifying the origin, authority class, retrieval context and applicability of asserted facts.</td>
+<td>Evidence</td>
+</tr>
+</tbody>
+</table>
+<h3 id="21-definition-sources">2.1 Definition sources<a class="headerlink" href="#21-definition-sources" title="Permanent link">&para;</a></h3>
+<p>Each definition is grounded in an existing governed OMSP artifact; no
+external standard is claimed:</p>
+<table>
+<thead>
+<tr>
+<th>Concept ID</th>
+<th>Grounding artifact and section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OMSP-CONCEPT-VESSEL</code></td>
+<td><code>OMSP-REFERENCE-VESSEL-0001</code> §1–§3 (vessel as governed system-of-systems; type/design/configuration/instance layers)</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-VESSEL-SYSTEM</code></td>
+<td><code>OMSP-REFERENCE-VESSEL-0001</code> §3–§4 (system as major functional grouping within the decomposition)</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-EQUIPMENT-ROLE</code></td>
+<td><code>OMSP-REFERENCE-EQUIPMENT-0001</code> §2 (configuration item: "an equipment role selected for a versioned vessel configuration"), §3, §10</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-PORT</code></td>
+<td><code>OMSP-REFERENCE-EQUIPMENT-0001</code> §3, §6 (typed ports as interface endpoints)</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-INTERFACE</code></td>
+<td><code>OMSP-REFERENCE-EQUIPMENT-0001</code> §6 (interface families; recorded media, direction, limits)</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-CONNECTION</code></td>
+<td><code>OMSP-REFERENCE-EQUIPMENT-0001</code> §6 ("interfaces are represented through typed ports and connections")</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-PROTECTION</code></td>
+<td><code>OMSP-REFERENCE-EQUIPMENT-0001</code> §6 (safety-protection interface family), §7 (capability model); core Capability definition</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-MEASUREMENT-POINT</code></td>
+<td><code>OMSP-PLANNING-GOLDEN-PATH-0001</code> §5.1–§5.2 (measurement roles "modeled as points, not as a live data pipeline")</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-OPERATIONAL-SCENARIO</code></td>
+<td><code>OMSP-REFERENCE-SCENARIO-0001</code> §1, §4 (scenario record contract)</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-SOURCE-RECORD</code></td>
+<td><code>OMSP-REFERENCE-SOURCE-0001</code> §1–§2 (source register record contract); <code>OMSP-PLANNING-GOLDEN-PATH-0001</code> §4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-classification-decisions">2.2 Classification decisions<a class="headerlink" href="#22-classification-decisions" title="Permanent link">&para;</a></h3>
+<p>Two parent assignments required an explicit decision; the rationale is
+recorded here per <code>ontology/CHANGE_POLICY.md</code>:</p>
+<ol>
+<li><strong>Equipment Role is an Entity, not a Capability.</strong> An equipment role is an
+   identifiable configuration element (<code>OMSP-REFERENCE-EQUIPMENT-0001</code> §2,
+   layer 3) that carries ports, connections, provenance and lifecycle state.
+   It is a <em>bearer</em> of capabilities, not an ability itself;
+   <code>OMSP-REFERENCE-EQUIPMENT-0001</code> §7 deliberately keeps capability records
+   separate from equipment records. Classifying the role under Capability
+   would conflate the function slot with the function it provides.</li>
+<li><strong>Protection is a Capability, not an Entity.</strong> Protection is a provided
+   ability — to limit, interrupt or isolate harmful conditions — matching the
+   core Capability definition ("an ability required or provided by an actor,
+   system, process or organization"). The protective <em>devices</em> that realize
+   this ability are Equipment Role instances in downstream models, never
+   children of this concept. This keeps the concept domain-neutral: the same
+   identity covers overcurrent interruption in an energy system and
+   overpressure relief in a fluid system without redefinition.</li>
+</ol>
+<h2 id="3-relation-taxonomy">3. Relation Taxonomy<a class="headerlink" href="#3-relation-taxonomy" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Relation ID</th>
+<th>Label</th>
+<th>Domain</th>
+<th>Range</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OMSP-RELATION-CONNECTS-TO</code></td>
+<td>connects-to</td>
+<td>Port</td>
+<td>Port</td>
+<td>The source port is joined to the target port through a connection.</td>
+</tr>
+<tr>
+<td><code>OMSP-RELATION-SUPPLIES</code></td>
+<td>supplies</td>
+<td>Equipment Role</td>
+<td>Equipment Role</td>
+<td>The source provides energy, fluid, data or another transported medium or service that the target consumes, through one or more connections.</td>
+</tr>
+<tr>
+<td><code>OMSP-RELATION-PROTECTS</code></td>
+<td>protects</td>
+<td>Equipment Role</td>
+<td>Entity</td>
+<td>The source limits, interrupts or isolates conditions that could harm the target or the media it carries.</td>
+</tr>
+<tr>
+<td><code>OMSP-RELATION-MEASURES</code></td>
+<td>measures</td>
+<td>Measurement Point</td>
+<td>Entity</td>
+<td>The source observes a quantity or state of the target and makes the observation available as evidence.</td>
+</tr>
+<tr>
+<td><code>OMSP-RELATION-SOURCED-FROM</code></td>
+<td>sourced-from</td>
+<td>Entity</td>
+<td>Source Record</td>
+<td>Asserted facts about the source derive from, and remain traceable to, the target provenance record.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="31-relation-semantics">3.1 Relation semantics<a class="headerlink" href="#31-relation-semantics" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Relations are directed from source to target
+  (<code>OMSP-ONTOLOGY-CORE-0001</code> §6).</li>
+<li><code>supplies</code> is <strong>medium-neutral by construction</strong>: the kind of medium or
+  service (and any flow properties) is an attribute of the connection and
+  interface involved, never of the relation. The same relation identity must
+  apply unchanged to any transported medium or service.</li>
+<li><code>connects-to</code> records topology only. Direction of flow, media and limits
+  belong to the Connection and its Interface contract, not to the relation.</li>
+<li><code>protects</code> has range Entity so that a protective role may guard an
+  equipment role, a connection, a port or a whole vessel system.</li>
+<li><code>measures</code> has range Entity so that a measurement point may observe an
+  equipment role, a connection or a vessel system state.</li>
+<li><code>sourced-from</code> has domain Entity: any element or asserted fact carrier may
+  cite a provenance record. It complements — and does not replace — the
+  authority-class rules of <code>OMSP-PLANNING-GOLDEN-PATH-0001</code> §4.3.</li>
+<li>Membership and dependency reuse core relations: an equipment role
+  <code>belongs-to</code> a vessel system, a vessel system <code>belongs-to</code> a vessel, a port
+  <code>belongs-to</code> an equipment role, a measurement point <code>belongs-to</code> an
+  equipment role or connection; consumers <code>depends-on</code> their distribution
+  role; an equipment role <code>implements</code> Protection when it realizes that
+  capability; a connection <code>implements</code> its interface contract.</li>
+</ul>
+<h2 id="4-core-to-maritime-concept-mapping">4. Core-to-Maritime Concept Mapping<a class="headerlink" href="#4-core-to-maritime-concept-mapping" title="Permanent link">&para;</a></h2>
+<p>Every maritime identity resolves to a core parent in the registry
+(<code>ontology/omsp-ontology.json</code>); this table is the Evidence Produced mapping
+required by WP-0077.</p>
+<table>
+<thead>
+<tr>
+<th>Maritime concept ID</th>
+<th>Core parent ID</th>
+<th>Mapping rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OMSP-CONCEPT-VESSEL</code></td>
+<td><code>OMSP-CONCEPT-SYSTEM</code></td>
+<td>A vessel is a socio-technical system of systems.</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-VESSEL-SYSTEM</code></td>
+<td><code>OMSP-CONCEPT-SYSTEM</code></td>
+<td>A functional grouping is itself a system within the vessel.</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-EQUIPMENT-ROLE</code></td>
+<td><code>OMSP-CONCEPT-ENTITY</code></td>
+<td>An identifiable configuration element; see §2.2 decision 1.</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-PORT</code></td>
+<td><code>OMSP-CONCEPT-ENTITY</code></td>
+<td>An identifiable declared interaction point.</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-INTERFACE</code></td>
+<td><code>OMSP-CONCEPT-ENTITY</code></td>
+<td>An identifiable typed interaction contract.</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-CONNECTION</code></td>
+<td><code>OMSP-CONCEPT-ENTITY</code></td>
+<td>An identifiable realized link between ports.</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-PROTECTION</code></td>
+<td><code>OMSP-CONCEPT-CAPABILITY</code></td>
+<td>A provided ability; see §2.2 decision 2.</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-MEASUREMENT-POINT</code></td>
+<td><code>OMSP-CONCEPT-ENTITY</code></td>
+<td>An identifiable observation point.</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-OPERATIONAL-SCENARIO</code></td>
+<td><code>OMSP-CONCEPT-MODEL</code></td>
+<td>A structured representation of entities, behavior and constraints.</td>
+</tr>
+<tr>
+<td><code>OMSP-CONCEPT-SOURCE-RECORD</code></td>
+<td><code>OMSP-CONCEPT-EVIDENCE</code></td>
+<td>A traceable record supporting claims and validation.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-golden-path-expressibility-demonstration-non-normative">5. Golden-Path Expressibility Demonstration (non-normative)<a class="headerlink" href="#5-golden-path-expressibility-demonstration-non-normative" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Non-normative demonstration.</strong> This appendix shows that every role row of
+the golden-path model boundary (<code>OMSP-PLANNING-GOLDEN-PATH-0001</code> §5.1) is
+expressible with the concepts and relations above. The vessel- and
+energy-specific terms below (including role identifiers such as
+<code>service-battery-bank</code>) are <strong>instance names from the golden-path
+definition</strong>, not ontology identities, and impose no meaning on this
+ontology. Nothing here asserts installed equipment, values or procedures.</p>
+</blockquote>
+<p>Common structure for all rows: each role is an instance of
+<code>OMSP-CONCEPT-EQUIPMENT-ROLE</code> that <code>belongs-to</code> an instance of
+<code>OMSP-CONCEPT-VESSEL-SYSTEM</code> (the golden-path system identifier), which
+<code>belongs-to</code> an instance of <code>OMSP-CONCEPT-VESSEL</code>; each role exposes
+<code>OMSP-CONCEPT-PORT</code> instances joined by <code>OMSP-CONCEPT-CONNECTION</code> instances
+(<code>connects-to</code>), each connection <code>implements</code> an <code>OMSP-CONCEPT-INTERFACE</code>
+contract; every asserted fact is <code>sourced-from</code> an
+<code>OMSP-CONCEPT-SOURCE-RECORD</code> or remains explicitly unknown.</p>
+<table>
+<thead>
+<tr>
+<th>§5.1 role</th>
+<th>Expression (concepts + relations)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>shore-power-inlet</code></td>
+<td>Equipment Role; <code>supplies</code> → <code>battery-charger</code>; inlet Ports <code>connects-to</code> charger Ports through Connections.</td>
+</tr>
+<tr>
+<td><code>service-battery-bank</code></td>
+<td>Equipment Role; target of <code>supplies</code> from charging roles; <code>supplies</code> → <code>dc-main-distribution</code> and <code>inverter</code>.</td>
+</tr>
+<tr>
+<td><code>battery-charger</code></td>
+<td>Equipment Role; <code>depends-on</code> → <code>shore-power-inlet</code>; <code>supplies</code> → <code>service-battery-bank</code>.</td>
+</tr>
+<tr>
+<td><code>alternator-charging</code></td>
+<td>Equipment Role (charging-source role only, per §5.1); <code>supplies</code> → <code>service-battery-bank</code>.</td>
+</tr>
+<tr>
+<td><code>inverter</code></td>
+<td>Equipment Role; target of <code>supplies</code> from <code>service-battery-bank</code>; <code>supplies</code> → its output-side consumer roles.</td>
+</tr>
+<tr>
+<td><code>dc-main-distribution</code></td>
+<td>Equipment Role; target of <code>supplies</code> from <code>service-battery-bank</code>; <code>supplies</code> → each <code>dc-consumer-*</code>.</td>
+</tr>
+<tr>
+<td><code>dc-consumer-*</code></td>
+<td>Equipment Role per consumer; target of <code>supplies</code> from <code>dc-main-distribution</code>; <code>depends-on</code> → <code>dc-main-distribution</code>.</td>
+</tr>
+<tr>
+<td><code>protection-*</code></td>
+<td>Equipment Role per protective device; <code>implements</code> → Protection; <code>protects</code> → the Connection or Equipment Role it guards.</td>
+</tr>
+<tr>
+<td><code>measurement-*</code></td>
+<td>Equipment Role per measurement provision; hosts Measurement Point instances (<code>belongs-to</code> the role); each Measurement Point <code>measures</code> → the Equipment Role or Connection it observes.</td>
+</tr>
+</tbody>
+</table>
+<p>The primary scenario (<code>OMSP-PLANNING-GOLDEN-PATH-0001</code> §8) is an instance of
+<code>OMSP-CONCEPT-OPERATIONAL-SCENARIO</code> that <code>uses</code> the equipment roles above and
+<code>traces-to</code> its Source Records, per the record contract of
+<code>OMSP-REFERENCE-SCENARIO-0001</code> §4 and §10.</p>
+<p><strong>Coverage result:</strong> all nine §5.1 role rows are expressible; no role
+required a new concept or relation beyond the closed set of this artifact.</p>
+<p><strong>Neutrality check:</strong> the same combinations express a freshwater or bilge
+slice unchanged — a pump role <code>supplies</code> a tank or consumer role, a relief or
+cutoff role <code>implements</code> Protection and <code>protects</code> a connection, a level or
+flow point <code>measures</code> a tank role — with no wording change to any definition
+in §2–§3.</p>
+<h2 id="6-change-evidence-record">6. Change Evidence Record<a class="headerlink" href="#6-change-evidence-record" title="Permanent link">&para;</a></h2>
+<p>Recorded per <code>ontology/CHANGE_POLICY.md</code> (OMSP-ONTOLOGY-CHANGE-POLICY-0001):</p>
+<ul>
+<li><strong>Issue:</strong> WP-0077 / #198 (Sprint-7, epic #171; specification
+  <code>OMSP-PLANNING-REBASELINE-0001</code> §4).</li>
+<li><strong>Affected IDs (all new):</strong> concepts <code>OMSP-CONCEPT-VESSEL</code>,
+  <code>OMSP-CONCEPT-VESSEL-SYSTEM</code>, <code>OMSP-CONCEPT-EQUIPMENT-ROLE</code>,
+  <code>OMSP-CONCEPT-PORT</code>, <code>OMSP-CONCEPT-INTERFACE</code>, <code>OMSP-CONCEPT-CONNECTION</code>,
+  <code>OMSP-CONCEPT-PROTECTION</code>, <code>OMSP-CONCEPT-MEASUREMENT-POINT</code>,
+  <code>OMSP-CONCEPT-OPERATIONAL-SCENARIO</code>, <code>OMSP-CONCEPT-SOURCE-RECORD</code>;
+  relations <code>OMSP-RELATION-CONNECTS-TO</code>, <code>OMSP-RELATION-SUPPLIES</code>,
+  <code>OMSP-RELATION-PROTECTS</code>, <code>OMSP-RELATION-MEASURES</code>,
+  <code>OMSP-RELATION-SOURCED-FROM</code>.</li>
+<li><strong>Compatibility class:</strong> Additive. No core concept, relation, domain,
+  range or constraint changed; no identity reused.</li>
+<li><strong>Impacted artifacts:</strong> <code>ontology/omsp-ontology.json</code> (15 additive entries
+  with <code>layer: maritime</code>), <code>ontology/OMSP_ONTOLOGY.md</code> (§10 extension
+  pointer; version 1.0.0 → 1.1.0), <code>ontology/README.md</code> (artifact listing),
+  this artifact (new).</li>
+<li><strong>Migration guidance:</strong> none required (purely additive; existing consumers
+  are unaffected).</li>
+<li><strong>Validation results:</strong> <code>python3 tooling/validate_ontology.py</code> →
+  <code>Ontology validation passed: 25 concepts, 19 relations.</code> (exit 0);
+  governed-metadata validation and quality gate green (see Work Package PR
+  evidence).</li>
+<li><strong>Accountable review:</strong> pending — this artifact enters at <code>Draft</code>;
+  promotion is a human decision (<code>OMSP-ONTOLOGY-CHANGE-POLICY-0001</code>,
+  Authority Boundary).</li>
+</ul>
+<h2 id="7-boundaries">7. Boundaries<a class="headerlink" href="#7-boundaries" title="Permanent link">&para;</a></h2>
+<p>This artifact does not define:</p>
+<ul>
+<li>a data schema, YAML model format, database structure or reasoning engine
+  (schemas remain in <code>schemas/</code>; models in downstream Work Packages);</li>
+<li>equipment types or equipment classes — these are Equipment Role and
+  equipment-class <em>instances</em> in downstream models
+  (<code>OMSP-REFERENCE-EQUIPMENT-0001</code> §4);</li>
+<li>physical-quantity kinds, media kinds, limits or any vessel-specific fact —
+  such values require provenance per <code>OMSP-PLANNING-GOLDEN-PATH-0001</code> §4.3;</li>
+<li>protocols, telemetry pipelines or live data semantics;</li>
+<li>alignment with any external standard (no IMO, ISO or class-society claim is
+  made in v0.1);</li>
+<li>any certified procedure or operational instruction. Content built on these
+  identities remains advisory and subject to the safety boundaries of
+  <code>reference/DIGITAL_TWIN_GOVERNANCE_AND_SAFETY_BOUNDARIES.md</code>.</li>
+</ul>
+<p>Downstream domain extensions must build on these identifiers through separate
+governed artifacts, per <code>OMSP-ONTOLOGY-CORE-0001</code> §10.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      OMSP Foundation — engineering documentation, not operational guidance. Artifact lifecycle statuses (Draft / Review / Active) are shown as-is.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/OMSP-Foundation/omsp-bootstrap" target="_blank" rel="noopener" title="OMSP on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
