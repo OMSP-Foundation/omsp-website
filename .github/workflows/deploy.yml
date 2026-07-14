@@ -1,0 +1,92 @@
+---
+# Build & deploy the OMSP public standards website (ADR-0003, WP-0091).
+#
+# Content is pulled from omsp-bootstrap at build time (never stored here):
+#   stable / "latest"  <- newest non-draft release tag
+#   dev                <- develop branch (clearly pre-release)
+#
+# Triggers: site-repo pushes, repository_dispatch from omsp-bootstrap
+# (sent on every develop merge and release publication), a weekly cron
+# safety net, and manual dispatch.
+name: Build & deploy
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [omsp-content-updated]
+  schedule:
+    - cron: "0 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Sync content & deploy
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install site toolchain
+        run: pip install -r requirements.txt
+
+      - name: Resolve stable release tag
+        id: refs
+        run: |
+          tag=$(gh api repos/OMSP-Foundation/omsp-bootstrap/releases \
+            --jq '[.[] | select(.draft == false)][0].tag_name')
+          if [ -z "$tag" ] || [ "$tag" = "null" ]; then
+            echo "::error::no published release found in omsp-bootstrap"
+            exit 1
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "stable channel source: $tag"
+
+      - name: Checkout content source (stable)
+        uses: actions/checkout@v4
+        with:
+          repository: OMSP-Foundation/omsp-bootstrap
+          ref: ${{ steps.refs.outputs.tag }}
+          path: _source_stable
+
+      - name: Checkout content source (dev)
+        uses: actions/checkout@v4
+        with:
+          repository: OMSP-Foundation/omsp-bootstrap
+          ref: develop
+          path: _source_dev
+
+      - name: Configure git identity
+        run: |
+          git config user.name "omsp-website-ci"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages --depth=1 || true
+
+      - name: Deploy stable channel
+        run: |
+          python scripts/sync_content.py _source_stable docs/standards
+          mike deploy --push --update-aliases "${{ steps.refs.outputs.tag }}" latest
+
+      - name: Deploy dev channel
+        run: |
+          python scripts/sync_content.py _source_dev docs/standards
+          mike deploy --push --title "dev (pre-release)" dev
+
+      - name: Ensure default version
+        run: mike set-default --push latest

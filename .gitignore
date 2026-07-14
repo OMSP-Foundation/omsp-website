@@ -1,0 +1,8 @@
+# Synced standards content is generated at build time from omsp-bootstrap
+# (ADR-0003 single-source rule) — never committed here.
+docs/standards/
+site/
+_source_stable/
+_source_dev/
+__pycache__/
+.venv/

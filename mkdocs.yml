@@ -1,0 +1,67 @@
+site_name: OMSP — Open Maritime Systems Platform
+site_description: >-
+  Open standards for knowledge-first, model-driven maritime systems
+  engineering — the MODS documentation stack, governance and reference
+  models, published from the omsp-bootstrap repository.
+site_url: https://omsp-foundation.github.io/omsp-website/
+repo_url: https://github.com/OMSP-Foundation/omsp-bootstrap
+repo_name: OMSP-Foundation/omsp-bootstrap
+edit_uri: ""
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    logo: material/anchor
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/OMSP-Foundation/omsp-bootstrap
+      name: OMSP on GitHub
+
+copyright: >-
+  OMSP Foundation — engineering documentation, not operational guidance.
+  Artifact lifecycle statuses (Draft / Review / Active) are shown as-is.
