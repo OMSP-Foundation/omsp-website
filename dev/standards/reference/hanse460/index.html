@@ -3997,7 +3997,7 @@ inverter. AC-side consumers of the option package are out of scope per
 golden path §5.2.</p>
 <h2 id="5-published-unknowns-count-per-file">5. Published unknowns count per file<a class="headerlink" href="#5-published-unknowns-count-per-file" title="Permanent link">&para;</a></h2>
 <p>Generated with (run from the repository root):</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>reference/hanse460<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>f<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.yaml<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">: </span><span class="k">$(</span>grep<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;status: unknown&#39;</span><span class="w"> </span><span class="nv">$f</span><span class="k">)</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>reference/hanse460<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>f<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.yaml<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$f</span><span class="s2">: </span><span class="k">$(</span>grep<span class="w"> </span>-c<span class="w"> </span><span class="s1">'status: unknown'</span><span class="w"> </span><span class="nv">$f</span><span class="k">)</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
 </code></pre></div>
 <table>
 <thead>
@@ -4337,20 +4337,20 @@ GFCI test, printed p. 66), plus measurement roles whose
 (<code>measurement-service-battery</code>); the biennial system-level
 inspection (owner's manual Ch. 1 §1.2.5, printed p. 6) is carried by
 <code>affected_systems</code>.</p>
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-<span class="w"> </span>reference/hanse460<span class="w"> </span>service-battery-bank<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-<span class="w"> </span>reference/hanse460<span class="w"> </span>service-battery-bank<span class="w"> </span><span class="s">&lt;&lt;'PY'</span>
 <span class="s">import sys, yaml</span>
 <span class="s">from pathlib import Path</span>
 <span class="s">pkg = Path(sys.argv[1]); eq, cn, own = {}, {}, {}</span>
-<span class="s">for f in sorted(pkg.glob(&quot;*.yaml&quot;)):</span>
+<span class="s">for f in sorted(pkg.glob("*.yaml")):</span>
 <span class="s">    d = yaml.safe_load(f.read_text())</span>
 <span class="s">    if not isinstance(d, dict): continue</span>
-<span class="s">    i = d.get(&quot;id&quot;, &quot;&quot;)</span>
-<span class="s">    if i.startswith(&quot;equipment:&quot;):</span>
+<span class="s">    i = d.get("id", "")</span>
+<span class="s">    if i.startswith("equipment:"):</span>
 <span class="s">        eq[i] = d</span>
-<span class="s">        for p in d.get(&quot;ports&quot;, []): own[p[&quot;id&quot;]] = i</span>
-<span class="s">    elif i.startswith(&quot;connection:&quot;): cn[i] = d</span>
-<span class="s">seed = next(i for i in eq if i.endswith(&quot;:&quot; + sys.argv[2]))</span>
-<span class="s">edges = [(own[c[&quot;source_port&quot;]], own[c[&quot;target_port&quot;]], k)</span>
+<span class="s">        for p in d.get("ports", []): own[p["id"]] = i</span>
+<span class="s">    elif i.startswith("connection:"): cn[i] = d</span>
+<span class="s">seed = next(i for i in eq if i.endswith(":" + sys.argv[2]))</span>
+<span class="s">edges = [(own[c["source_port"]], own[c["target_port"]], k)</span>
 <span class="s">         for k, c in cn.items()]</span>
 <span class="s">def bfs(start, down):</span>
 <span class="s">    seen, fr = set(), {start}</span>
@@ -4362,16 +4362,16 @@ inspection (owner's manual Ch. 1 §1.2.5, printed p. 6) is carried by
 <span class="s">der = {seed} | bfs(seed, True) | bfs(seed, False)</span>
 <span class="s">used = {k for a, b, k in edges if a in der and b in der}</span>
 <span class="s">for i, d in eq.items():</span>
-<span class="s">    if any(r in der or r in used for r in d.get(&quot;protects&quot;, []) or []):</span>
+<span class="s">    if any(r in der or r in used for r in d.get("protects", []) or []):</span>
 <span class="s">        der.add(i)</span>
-<span class="s">    if any(m.get(&quot;measures&quot;) in der</span>
-<span class="s">           for m in d.get(&quot;measurement_points&quot;, []) or []):</span>
+<span class="s">    if any(m.get("measures") in der</span>
+<span class="s">           for m in d.get("measurement_points", []) or []):</span>
 <span class="s">        der.add(i)</span>
-<span class="s">print(&quot;derived equipment (%d):&quot; % len(der))</span>
-<span class="s">[print(&quot; &quot;, i) for i in sorted(der)]</span>
-<span class="s">print(&quot;traversed connections (%d):&quot; % len(used))</span>
-<span class="s">[print(&quot; &quot;, i) for i in sorted(used)]</span>
-<span class="s">print(&quot;excluded:&quot;, *sorted(set(eq) - der))</span>
+<span class="s">print("derived equipment (%d):" % len(der))</span>
+<span class="s">[print(" ", i) for i in sorted(der)]</span>
+<span class="s">print("traversed connections (%d):" % len(used))</span>
+<span class="s">[print(" ", i) for i in sorted(used)]</span>
+<span class="s">print("excluded:", *sorted(set(eq) - der))</span>
 <span class="s">PY</span>
 </code></pre></div>
 <p>Scenario instances are advisory reference material for the
